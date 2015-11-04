@@ -4,9 +4,7 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - sudo add-apt-repository ppa:cwchien/gradle
-  - sudo apt-get update
-  - sudo apt-get install gradle
+  - sudo sudo apt-get --only-upgrade install gradle -f
   - gradle -v
 
 install:
