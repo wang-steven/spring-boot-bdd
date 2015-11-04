@@ -79,7 +79,7 @@ test {
 
 
 checkstyle {
-    toolVersion = '6.8'
+    toolVersion = '6.12'
 }
 
 checkstyleMain {
