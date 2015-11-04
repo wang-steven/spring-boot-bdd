@@ -1,0 +1,10 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+before_install:
+  - chmod 755 gradlew
+
+script:
+  - ./gradlew clean check test jacocoTestReport install
