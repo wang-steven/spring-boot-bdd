@@ -3,6 +3,7 @@ package org.steven.features.steps;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java8.En;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,9 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Objects;
+
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 @Slf4j
 public class HomepageSteps extends FluentTest implements En {
@@ -35,10 +39,10 @@ public class HomepageSteps extends FluentTest implements En {
         goTo("http://google.com");
     }
 
-//    @Then("^I should see the welcome page$")
-//    public void i_should_see_the_welcome_page() {
-//        assertThat(find("body").getText(), containsString("Google"));
-//    }
+    @Then("^I should see the welcome page$")
+    public void i_should_see_the_welcome_page() {
+        assertThat(find("body").getText(), containsString("Google"));
+    }
 
     @Override
     public WebDriver getDefaultDriver() {
