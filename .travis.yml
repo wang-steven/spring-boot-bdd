@@ -4,8 +4,10 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - chmod 755 gradlew
-  - ls -al
+  - chmod +x gradlew
+
+install:
+  - ./gradlew clean check
 
 script:
-  - gradle clean check test jacocoTestReport install
+  - ./gradlew test jacocoTestReport install
