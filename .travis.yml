@@ -4,10 +4,10 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - gradle -v
+  - chmod +x ./gradlew
 
 install:
-  - gradle clean check
+  - ./gradlew clean check
 
 script:
-  - gradle test jacocoTestReport jar
+  - ./gradlew test jacocoTestReport jar
