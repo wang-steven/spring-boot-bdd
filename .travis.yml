@@ -5,6 +5,7 @@ jdk:
 
 before_install:
   - chmod 755 gradlew
+  - ls -al
 
 script:
   - ./gradlew clean check test jacocoTestReport install
