@@ -8,4 +8,4 @@ before_install:
   - ls -al
 
 script:
-  - ./gradlew clean check test jacocoTestReport install
+  - gradle clean check test jacocoTestReport install
