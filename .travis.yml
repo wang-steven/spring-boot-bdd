@@ -4,11 +4,10 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - sudo apt-get update && sudo apt-get upgrade gradle -y
   - gradle -v
 
 install:
   - gradle clean check
 
 script:
-  - gradle test jacocoTestReport install
+  - gradle test jacocoTestReport jar

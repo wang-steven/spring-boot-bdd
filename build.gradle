@@ -26,7 +26,7 @@ ext {
 
 apply plugin: 'java'
 apply plugin: 'jacoco'
-apply plugin: 'checkstyle'
+//apply plugin: 'checkstyle'
 apply plugin: 'maven'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -78,25 +78,25 @@ test {
 
 
 
-checkstyle {
-    toolVersion = '6.12'
-}
-
-checkstyleMain {
-    doLast {
-        ant.xslt(in: "$buildDir/reports/checkstyle/main.xml",
-                style: "config/checkstyle/checkstyle.xsl",
-                out: "$buildDir/reports/checkstyle/checkstyle.html"
-        )
-    }
-}
-
-checkstyleTest {
-    ignoreFailures = true
-}
-
-task checkstyleReport << {
-}
+//checkstyle {
+//    toolVersion = '6.12'
+//}
+//
+//checkstyleMain {
+//    doLast {
+//        ant.xslt(in: "$buildDir/reports/checkstyle/main.xml",
+//                style: "config/checkstyle/checkstyle.xsl",
+//                out: "$buildDir/reports/checkstyle/checkstyle.html"
+//        )
+//    }
+//}
+//
+//checkstyleTest {
+//    ignoreFailures = true
+//}
+//
+//task checkstyleReport << {
+//}
 
 jacoco {
     toolVersion = '0.7.5.201505241946'
@@ -111,5 +111,5 @@ eclipse {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.7'
+    gradleVersion = '2.2.1'
 }
