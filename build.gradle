@@ -10,7 +10,7 @@ buildscript {
         maven { url "https://repo.spring.io/milestone" }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
@@ -78,25 +78,25 @@ test {
 
 
 
-//checkstyle {
-//    toolVersion = '6.12'
-//}
-//
-//checkstyleMain {
-//    doLast {
-//        ant.xslt(in: "$buildDir/reports/checkstyle/main.xml",
-//                style: "config/checkstyle/checkstyle.xsl",
-//                out: "$buildDir/reports/checkstyle/checkstyle.html"
-//        )
-//    }
-//}
-//
-//checkstyleTest {
-//    ignoreFailures = true
-//}
-//
-//task checkstyleReport << {
-//}
+checkstyle {
+    toolVersion = '6.12'
+}
+
+checkstyleMain {
+    doLast {
+        ant.xslt(in: "$buildDir/reports/checkstyle/main.xml",
+                style: "config/checkstyle/checkstyle.xsl",
+                out: "$buildDir/reports/checkstyle/checkstyle.html"
+        )
+    }
+}
+
+checkstyleTest {
+    ignoreFailures = true
+}
+
+task checkstyleReport << {
+}
 
 jacoco {
     toolVersion = '0.7.5.201505241946'
@@ -111,6 +111,6 @@ eclipse {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.2'
+    gradleVersion = '2.7'
     distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
